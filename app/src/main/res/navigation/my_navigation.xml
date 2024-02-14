@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigatioon"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.memorygameorginal.ui.screen.SplashScreen"
+        android:label="SplashScreen"
+        tools:layout="@layout/screen_splash">
+        <action
+            android:id="@+id/action_splashScreen_to_menuScreen"
+            app:destination="@id/menuScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuScreen"
+        android:name="com.example.memorygameorginal.ui.screen.MenuScreen"
+        android:label="MenuScreen"
+        tools:layout="@layout/screen_menu">
+        <action
+            android:id="@+id/action_menuScreen_to_gameScreen"
+            app:destination="@id/gameScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameScreen"
+        android:name="com.example.memorygameorginal.ui.screen.GameScreen"
+        android:label="GameScreen"
+        tools:layout="@layout/screen_game">
+        <argument
+            android:name="levelEnum"
+            app:argType="com.example.memorygameorginal.data.LevelEnum" />
+    </fragment>
+</navigation>
