@@ -17,7 +17,7 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/btn_home"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginBottom="36dp"
@@ -30,21 +30,10 @@
         app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="@id/bg_image_dialog" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="36dp"
-        android:background="@drawable/bg_btn"
-        android:elevation="150dp"
-        android:padding="4dp"
-        android:src="@drawable/ic_pause"
-        app:layout_constraintBottom_toBottomOf="@id/bg_image_dialog"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
+
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/btn_restart"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginBottom="36dp"
@@ -61,9 +50,9 @@
         android:layout_width="130dp"
         android:layout_height="170dp"
         android:src="@drawable/ic_cup"
-        app:layout_constraintVertical_bias="0.6"
         app:layout_constraintBottom_toBottomOf="@+id/bg_image_dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/bg_image_dialog"
-        app:layout_constraintTop_toTopOf="@+id/bg_image_dialog" />
+        app:layout_constraintTop_toTopOf="@+id/bg_image_dialog"
+        app:layout_constraintVertical_bias="0.6" />
 </androidx.constraintlayout.widget.ConstraintLayout>

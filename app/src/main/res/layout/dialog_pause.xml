@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Pause"-->
+    <!--        android:textColor="@color/textColor"-->
+    <!--        te-->
+    <!--        />-->
+
+    <ImageView
+        android:id="@+id/bg_image_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="450dp"
+        android:src="@drawable/bg_dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/my_font2"
+        android:text="@string/pause"
+        android:textColor="@color/textColor"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/bg_image_dialog"
+        app:layout_constraintEnd_toEndOf="@id/bg_image_dialog"
+        app:layout_constraintStart_toStartOf="@id/bg_image_dialog"
+        app:layout_constraintTop_toTopOf="@id/bg_image_dialog"
+        app:layout_constraintVertical_bias="0.2"
+
+        />
+
+    <ImageView
+        android:id="@+id/btn_home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/bg_btn"
+        android:elevation="150dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_home"
+        app:layout_constraintBottom_toBottomOf="@id/bg_image_dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.309"
+        app:layout_constraintStart_toStartOf="@id/bg_image_dialog" />
+
+
+    <ImageView
+        android:id="@+id/btn_restart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/bg_btn"
+        android:elevation="150dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_refresh"
+        app:layout_constraintBottom_toBottomOf="@id/bg_image_dialog"
+        app:layout_constraintEnd_toEndOf="@+id/bg_image_dialog"
+        app:layout_constraintHorizontal_bias="0.706"
+        app:layout_constraintStart_toStartOf="@id/bg_image_dialog" />
+
+    <ImageView
+        android:id="@+id/btn_start"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/bg_btn"
+        android:elevation="150dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_pause"
+        app:layout_constraintBottom_toBottomOf="@id/bg_image_dialog"
+        app:layout_constraintEnd_toStartOf="@+id/btn_restart"
+        app:layout_constraintStart_toEndOf="@+id/btn_home" />
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="170dp"
+        android:src="@drawable/ic_cup"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_image_dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bg_image_dialog"
+        app:layout_constraintTop_toTopOf="@+id/bg_image_dialog"
+        app:layout_constraintVertical_bias="0.6" />
+</androidx.constraintlayout.widget.ConstraintLayout>

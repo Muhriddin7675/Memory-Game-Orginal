@@ -11,4 +11,6 @@ interface GameViewModel {
  val closeAllViewsFlow :Flow<Unit>
 
  fun loadCardByLevel(level: LevelEnum)
+ fun openCard()
+ fun closeGameScreen()
 }

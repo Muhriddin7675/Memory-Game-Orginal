@@ -23,15 +23,24 @@ class GameViewModelImpl @Inject constructor(
     private val navigator: AppNavigator,
     private val repositoryImpl: AppRepositoryImpl
 ) : ViewModel(), GameViewModel {
-    override val cardFlow = MutableSharedFlow<List<CardData>>(replay = 1, onBufferOverflow = BufferOverflow.DROP_LATEST)
-    override val closeAllViewsFlow = MutableSharedFlow<Unit>(replay = 1, onBufferOverflow = BufferOverflow.DROP_LATEST)
+    override val cardFlow =
+        MutableSharedFlow<List<CardData>>(replay = 1, onBufferOverflow = BufferOverflow.DROP_LATEST)
+    override val closeAllViewsFlow =
+        MutableSharedFlow<Unit>(replay = 1, onBufferOverflow = BufferOverflow.DROP_LATEST)
 
-    init {
+    override fun openCard() {
         viewModelScope.launch {
-            delay(1000)
+            delay(500)
             closeAllViewsFlow.emit(Unit)
         }
     }
+
+    override fun closeGameScreen() {
+        viewModelScope.launch {
+            navigator.back()
+        }
+    }
+
     override fun loadCardByLevel(level: LevelEnum) {
         repositoryImpl.getByLevel(level)
             .onEach { cardFlow.emit(it) }
