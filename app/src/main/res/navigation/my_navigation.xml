@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_menuScreen_to_gameScreen"
             app:destination="@id/gameScreen" />
+        <action
+            android:id="@+id/action_menuScreen_to_infoScreen"
+            app:destination="@id/infoScreen" />
     </fragment>
     <fragment
         android:id="@+id/gameScreen"
@@ -34,4 +37,10 @@
             android:name="levelEnum"
             app:argType="com.example.memorygameorginal.data.LevelEnum" />
     </fragment>
+    <fragment
+        android:id="@+id/infoScreen"
+        android:name="com.example.memorygameorginal.ui.screen.InfoScreen"
+        android:label="InfoScreen"
+        tools:layout="@layout/screen_info"
+        />
 </navigation>

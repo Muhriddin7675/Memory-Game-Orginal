@@ -30,8 +30,6 @@
         app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="@id/bg_image_dialog" />
 
-
-
     <ImageView
         android:id="@+id/btn_restart"
         android:layout_width="50dp"
@@ -46,13 +44,69 @@
         app:layout_constraintHorizontal_bias="0.706"
         app:layout_constraintStart_toStartOf="@id/bg_image_dialog" />
 
+    <!--    <com.airbnb.lottie.LottieAnimationView-->
+    <!--        android:id="@+id/winLottieAnimation"-->
+    <!--        android:layout_width="170dp"-->
+    <!--        android:layout_height="220dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/bg_image_dialog"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/bg_image_dialog"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/bg_image_dialog"-->
+    <!--        app:layout_constraintVertical_bias="0.6"-->
+    <!--        app:lottie_fileName="win_cup.json"-->
+    <!--        app:lottie_loop="true"-->
+    <!--        tools:ignore="MissingClass,MissingConstraints" />-->
+
     <ImageView
+        android:id="@+id/cup"
         android:layout_width="130dp"
         android:layout_height="170dp"
         android:src="@drawable/ic_cup"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/bg_image_dialog"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/bg_image_dialog"
         app:layout_constraintTop_toTopOf="@+id/bg_image_dialog"
         app:layout_constraintVertical_bias="0.6" />
+
+    <ImageView
+        android:id="@+id/starImage1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_star"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/bg_image_dialog"
+        app:layout_constraintEnd_toEndOf="@id/bg_image_dialog"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="@id/bg_image_dialog"
+        app:layout_constraintTop_toTopOf="@id/bg_image_dialog"
+        app:layout_constraintVertical_bias="0.27" />
+
+    <ImageView
+        android:id="@+id/starImage2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_star"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/bg_image_dialog"
+        app:layout_constraintEnd_toEndOf="@id/bg_image_dialog"
+        app:layout_constraintStart_toStartOf="@id/bg_image_dialog"
+        app:layout_constraintTop_toTopOf="@id/bg_image_dialog"
+        app:layout_constraintVertical_bias="0.23" />
+
+    <ImageView
+        android:id="@+id/starImage3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_star"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/bg_image_dialog"
+        app:layout_constraintEnd_toEndOf="@id/bg_image_dialog"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="@id/bg_image_dialog"
+        app:layout_constraintTop_toTopOf="@id/bg_image_dialog"
+        app:layout_constraintVertical_bias="0.27" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

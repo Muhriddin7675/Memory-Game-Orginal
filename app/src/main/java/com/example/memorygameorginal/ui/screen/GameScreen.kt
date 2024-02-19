@@ -3,12 +3,15 @@ package com.example.memorygameorginal.ui.screen
 
 import android.os.Bundle
 import android.os.SystemClock
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Chronometer
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.setMargins
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -70,7 +73,6 @@ class GameScreen : Fragment(R.layout.screen_game) {
                 binding.chronometer.base = timer + SystemClock.elapsedRealtime()
                 binding.chronometer.start()
                 binding.textCounter.text = counter.toString()
-
             }
             .launchIn(lifecycleScope)
 
@@ -78,10 +80,21 @@ class GameScreen : Fragment(R.layout.screen_game) {
             timer = SystemClock.elapsedRealtime() - binding.chronometer.base
             binding.chronometer.stop()
             openPauseDialog()
-
-
         }
 
+//        val callback = object : OnBackPressedCallback(true) {
+//            override fun handleOnBackPressed() {
+//                AlertDialog.Builder(requireContext())
+//                    .setMessage("Do you want to exit the memory game :( ?")
+//                    .setPositiveButton("Yes") { _, _ ->
+//                        requireActivity().finish()
+//                    }
+//                    .setNegativeButton("No", null)
+//                    .show()
+//            }
+//        }
+//
+//        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
 
@@ -197,8 +210,17 @@ class GameScreen : Fragment(R.layout.screen_game) {
     private fun isFinish() {
         if (findCardCount == level.verCount * level.horCount) {
 
+            binding.chronometer.stop()
             val dialog = FinishDialog()
             dialog.show(parentFragmentManager, "finish dialog")
+            val k = counter.toFloat() / views.size.toFloat()
+
+            Log.d("TTT", "isFinish: $k ")
+            dialog.setNumber(
+                if (k <= 1) 2
+                else if (k > 1 && k < 1.8) 1
+                else 0
+            )
             dialog.setOnClickMenu {
                 viewModel.closeGameScreen()
             }

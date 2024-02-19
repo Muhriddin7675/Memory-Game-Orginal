@@ -29,16 +29,14 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/my_font2"
         android:text="@string/pause"
-        android:textColor="@color/textColor"
+        android:textColor="#ED0404"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/bg_image_dialog"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_image_dialog"
         app:layout_constraintEnd_toEndOf="@id/bg_image_dialog"
         app:layout_constraintStart_toStartOf="@id/bg_image_dialog"
         app:layout_constraintTop_toTopOf="@id/bg_image_dialog"
-        app:layout_constraintVertical_bias="0.2"
-
-        />
+        app:layout_constraintVertical_bias="0.264" />
 
     <ImageView
         android:id="@+id/btn_home"
@@ -82,13 +80,16 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_restart"
         app:layout_constraintStart_toEndOf="@+id/btn_home" />
 
-    <ImageView
-        android:layout_width="130dp"
-        android:layout_height="170dp"
-        android:src="@drawable/ic_cup"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/pauseLottieAnimation"
+        android:layout_width="170dp"
+        android:layout_height="220dp"
         app:layout_constraintBottom_toBottomOf="@+id/bg_image_dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/bg_image_dialog"
         app:layout_constraintTop_toTopOf="@+id/bg_image_dialog"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.65"
+        app:lottie_fileName="pause_animation.json"
+        app:lottie_loop="true"
+        tools:ignore="MissingClass,MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

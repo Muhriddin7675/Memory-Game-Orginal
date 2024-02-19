@@ -4,4 +4,5 @@ import com.example.memorygameorginal.data.LevelEnum
 
 interface MenuViewModel {
     fun openGameScreen(enum: LevelEnum)
+    fun openInfoScreen()
 }

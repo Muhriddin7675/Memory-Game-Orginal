@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.memorygameorginal.R
@@ -19,6 +21,8 @@ class PauseDialog : DialogFragment(R.layout.dialog_pause) {
     private lateinit var clickStart:() -> Unit
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val animation = binding.pauseLottieAnimation
+        animation.playAnimation()
         binding.btnHome.setOnClickListener {
             clickMenu.invoke()
             dismiss()
@@ -31,6 +35,14 @@ class PauseDialog : DialogFragment(R.layout.dialog_pause) {
             clickStart.invoke()
             dismiss()
         }
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+
+            }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
     }
 
     fun setOnClickMenu(block: () -> Unit) {
@@ -53,4 +65,5 @@ class PauseDialog : DialogFragment(R.layout.dialog_pause) {
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.setCanceledOnTouchOutside(false)
     }
+
 }

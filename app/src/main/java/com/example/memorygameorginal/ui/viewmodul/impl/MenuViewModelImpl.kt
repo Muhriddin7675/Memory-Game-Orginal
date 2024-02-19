@@ -20,4 +20,10 @@ class MenuViewModelImpl @Inject constructor(
         }
     }
 
+    override fun openInfoScreen() {
+        viewModelScope.launch {
+            navigator.navigateTo(MenuScreenDirections.actionMenuScreenToInfoScreen())
+        }
+    }
+
 }
