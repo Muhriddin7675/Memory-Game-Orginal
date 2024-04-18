@@ -7,6 +7,7 @@
     android:background="@drawable/bg_game">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:background="@drawable/bg_menu"
@@ -15,8 +16,9 @@
     <ImageView
         android:id="@+id/text_memory_game"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="300dp"
         android:layout_marginTop="32sp"
+        android:padding="24dp"
         android:src="@drawable/text_memory_game"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,7 +97,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/ic_info"
+        android:background="@drawable/icon_lamp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

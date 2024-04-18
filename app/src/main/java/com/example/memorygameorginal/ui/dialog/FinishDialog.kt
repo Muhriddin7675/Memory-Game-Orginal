@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.example.memorygameorginal.R
 import com.example.memorygameorginal.databinding.DialogFinishBinding
@@ -30,6 +32,9 @@ class FinishDialog : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showAnim()
+
+        this.isCancelable = false
+
         binding.btnHome.setOnClickListener {
             clickMenu.invoke()
             dismiss()
@@ -122,7 +127,7 @@ class FinishDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        val width = resources.displayMetrics.widthPixels * 0.9    // 90% of screen width
+        val width = resources.displayMetrics.widthPixels * 1   // 100% of screen width
         val height = ViewGroup.LayoutParams.WRAP_CONTENT         // Automatic height
         dialog?.window?.setLayout(width.toInt(), height)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))

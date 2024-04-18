@@ -35,7 +35,7 @@
         tools:layout="@layout/screen_game">
         <argument
             android:name="levelEnum"
-            app:argType="com.example.memorygameorginal.data.LevelEnum" />
+            app:argType="com.example.memorygameorginal.app.data.LevelEnum" />
     </fragment>
     <fragment
         android:id="@+id/infoScreen"

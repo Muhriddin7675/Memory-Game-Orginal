@@ -3,6 +3,7 @@ package com.example.memorygameorginal.ui.dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,11 +19,15 @@ class PauseDialog : DialogFragment(R.layout.dialog_pause) {
 
     private lateinit var clickMenu: () -> Unit
     private lateinit var clickRestart: () -> Unit
-    private lateinit var clickStart:() -> Unit
+    private lateinit var clickStart: () -> Unit
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val animation = binding.pauseLottieAnimation
         animation.playAnimation()
+
+        this.isCancelable = false
+
+
         binding.btnHome.setOnClickListener {
             clickMenu.invoke()
             dismiss()
@@ -53,13 +58,14 @@ class PauseDialog : DialogFragment(R.layout.dialog_pause) {
         clickRestart = block
     }
 
-    fun setOnClickStart(block: () -> Unit){
+    fun setOnClickStart(block: () -> Unit) {
         clickStart = block
     }
+
     override fun onStart() {
         super.onStart()
 
-        val width = resources.displayMetrics.widthPixels * 0.9    // 90% ekran eni
+        val width = resources.displayMetrics.widthPixels * 1    // 100% ekran eni
         val height = ViewGroup.LayoutParams.WRAP_CONTENT         // Avtomatik balandlik
         dialog?.window?.setLayout(width.toInt(), height)
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))

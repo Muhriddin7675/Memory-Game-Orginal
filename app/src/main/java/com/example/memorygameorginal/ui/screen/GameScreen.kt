@@ -19,8 +19,8 @@ import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.memorygameorginal.R
 import com.example.memorygameorginal.util.closeAnim
-import com.example.memorygameorginal.data.CardData
-import com.example.memorygameorginal.data.LevelEnum
+import com.example.memorygameorginal.app.data.CardData
+import com.example.memorygameorginal.app.data.LevelEnum
 import com.example.memorygameorginal.databinding.ScreenGameBinding
 import com.example.memorygameorginal.util.hideAnime
 import androidx.navigation.fragment.navArgs
@@ -77,27 +77,24 @@ class GameScreen : Fragment(R.layout.screen_game) {
             .launchIn(lifecycleScope)
 
         binding.btnPause.setOnClickListener {
-            timer = SystemClock.elapsedRealtime() - binding.chronometer.base
-            binding.chronometer.stop()
-            openPauseDialog()
+           pause()
         }
 
-//        val callback = object : OnBackPressedCallback(true) {
-//            override fun handleOnBackPressed() {
-//                AlertDialog.Builder(requireContext())
-//                    .setMessage("Do you want to exit the memory game :( ?")
-//                    .setPositiveButton("Yes") { _, _ ->
-//                        requireActivity().finish()
-//                    }
-//                    .setNegativeButton("No", null)
-//                    .show()
-//            }
-//        }
-//
-//        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+              pause()
+            }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
 
     }
 
+    private fun pause(){
+        timer = SystemClock.elapsedRealtime() - binding.chronometer.base
+        binding.chronometer.stop()
+        openPauseDialog()
+    }
     private fun openPauseDialog() {
         val dialog = PauseDialog()
         dialog.show(parentFragmentManager, "dialog pause")
@@ -147,7 +144,7 @@ class GameScreen : Fragment(R.layout.screen_game) {
                 .rotationY(89f)
                 .withEndAction {
                     image.rotationY = -89f
-                    image.setImageResource(R.drawable.image_animals)
+                    image.setImageResource(R.drawable.image_question)
                     image.animate()
                         .setDuration(500)
                         .rotationY(0f)
@@ -168,7 +165,6 @@ class GameScreen : Fragment(R.layout.screen_game) {
                     firstIndex = index
                     imageView.openFirstAnim()
                 } else {
-
                     secondIndex = index
                     imageView.openSecondAnim {
 
@@ -195,7 +191,6 @@ class GameScreen : Fragment(R.layout.screen_game) {
                 firstIndex = -1
                 secondIndex = -1
                 findCardCount += 2
-
                 isFinish()
             }
         } else {
@@ -217,8 +212,8 @@ class GameScreen : Fragment(R.layout.screen_game) {
 
             Log.d("TTT", "isFinish: $k ")
             dialog.setNumber(
-                if (k <= 1) 2
-                else if (k > 1 && k < 1.8) 1
+                if (k <= 1.3) 2
+                else if (k > 1.3 && k < 1.9) 1
                 else 0
             )
             dialog.setOnClickMenu {
@@ -234,9 +229,10 @@ class GameScreen : Fragment(R.layout.screen_game) {
     private fun restart() {
         timer = 0
         counter = 0
+        findCardCount = 0
+        binding.container.removeAllViews()
         views.clear()
         viewModel.loadCardByLevel(level)
-        binding.container.removeAllViews()
         viewModel.openCard()
 
     }

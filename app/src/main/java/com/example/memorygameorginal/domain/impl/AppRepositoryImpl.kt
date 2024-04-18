@@ -1,8 +1,8 @@
 package com.example.memorygameorginal.domain.impl
 
 import com.example.memorygameorginal.R
-import com.example.memorygameorginal.data.CardData
-import com.example.memorygameorginal.data.LevelEnum
+import com.example.memorygameorginal.app.data.CardData
+import com.example.memorygameorginal.app.data.LevelEnum
 import com.example.memorygameorginal.domain.AppRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

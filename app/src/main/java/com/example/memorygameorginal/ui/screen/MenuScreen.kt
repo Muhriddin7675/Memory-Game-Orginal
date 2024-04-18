@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.memorygameorginal.R
-import com.example.memorygameorginal.data.LevelEnum
+import com.example.memorygameorginal.app.data.LevelEnum
 import com.example.memorygameorginal.databinding.ScreenMenuBinding
 import com.example.memorygameorginal.ui.viewmodul.MenuViewModel
 import com.example.memorygameorginal.ui.viewmodul.impl.MenuViewModelImpl

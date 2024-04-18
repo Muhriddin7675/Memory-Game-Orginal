@@ -1,7 +1,7 @@
 package com.example.memorygameorginal.ui.viewmodul
 
-import com.example.memorygameorginal.data.CardData
-import com.example.memorygameorginal.data.LevelEnum
+import com.example.memorygameorginal.app.data.CardData
+import com.example.memorygameorginal.app.data.LevelEnum
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharedFlow
 

@@ -2,8 +2,8 @@ package com.example.memorygameorginal.ui.viewmodul.impl
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.memorygameorginal.data.CardData
-import com.example.memorygameorginal.data.LevelEnum
+import com.example.memorygameorginal.app.data.CardData
+import com.example.memorygameorginal.app.data.LevelEnum
 import com.example.memorygameorginal.domain.impl.AppRepositoryImpl
 import com.example.memorygameorginal.navigation.AppNavigator
 import com.example.memorygameorginal.ui.viewmodul.GameViewModel

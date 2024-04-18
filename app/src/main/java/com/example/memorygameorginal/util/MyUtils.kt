@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import androidx.core.view.isVisible
 import com.example.memorygameorginal.R
-import com.example.memorygameorginal.data.CardData
+import com.example.memorygameorginal.app.data.CardData
 
 fun ImageView.openFirstAnim() {
     this.isEnabled = false
@@ -54,7 +54,7 @@ fun ImageView.closeAnim() {
         .rotationY(-89f)
         .withEndAction {
             this.rotationY = 89f
-            this.setImageResource(R.drawable.image_animals)
+            this.setImageResource(R.drawable.image_empty)
             this.animate()
                 .setDuration(500)
                 .rotationY(0f)
@@ -72,7 +72,7 @@ fun ImageView.closeAnim(endAnim: () -> Unit) {
         .withEndAction {
             this.isEnabled = true
             this.rotationY = 89f
-            this.setImageResource(R.drawable.image_animals)
+            this.setImageResource(R.drawable.image_empty)
             this.animate()
                 .setDuration(500)
                 .rotationY(0f)

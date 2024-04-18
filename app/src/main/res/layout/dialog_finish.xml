@@ -60,15 +60,15 @@
     <ImageView
         android:id="@+id/cup"
         android:layout_width="130dp"
-        android:layout_height="170dp"
+        android:layout_height="150dp"
         android:src="@drawable/ic_cup"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/bg_image_dialog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/bg_image_dialog"
         app:layout_constraintTop_toTopOf="@+id/bg_image_dialog"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <ImageView
         android:id="@+id/starImage1"
@@ -81,7 +81,7 @@
         app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="@id/bg_image_dialog"
         app:layout_constraintTop_toTopOf="@id/bg_image_dialog"
-        app:layout_constraintVertical_bias="0.27" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <ImageView
         android:id="@+id/starImage2"
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="@id/bg_image_dialog"
         app:layout_constraintStart_toStartOf="@id/bg_image_dialog"
         app:layout_constraintTop_toTopOf="@id/bg_image_dialog"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <ImageView
         android:id="@+id/starImage3"
@@ -106,7 +106,20 @@
         app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toStartOf="@id/bg_image_dialog"
         app:layout_constraintTop_toTopOf="@id/bg_image_dialog"
-        app:layout_constraintVertical_bias="0.27" />
+        app:layout_constraintVertical_bias="0.35" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/my_font2"
+        android:text="@string/winner"
+        android:textColor="@color/textColor"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/starImage2"
+        app:layout_constraintEnd_toEndOf="@id/bg_image_dialog"
+        app:layout_constraintStart_toStartOf="@id/bg_image_dialog"
+        app:layout_constraintTop_toTopOf="@id/bg_image_dialog"
+        app:layout_constraintVertical_bias="0.94" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
