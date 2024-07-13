@@ -36,7 +36,7 @@ class MenuScreen : Fragment(R.layout.screen_menu) {
         binding.btnInfo.setOnClickListener {
             viewModel.openInfoScreen()
         }
-        val callback = object : OnBackPressedCallback(true) {
+   /*     val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 AlertDialog.Builder(requireContext())
                     .setMessage("Do you want to exit the memory game :( ?")
@@ -46,9 +46,9 @@ class MenuScreen : Fragment(R.layout.screen_menu) {
                     .setNegativeButton("No", null)
                     .show()
             }
-        }
+        }*/
 
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+//        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
     }
 }
 

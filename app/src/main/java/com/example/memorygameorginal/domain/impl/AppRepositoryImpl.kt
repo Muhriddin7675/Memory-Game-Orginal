@@ -53,6 +53,7 @@ class AppRepositoryImpl @Inject constructor() : AppRepository {
         val resultLs = ArrayList<CardData>()
         resultLs.addAll(list.subList(0, count))
         resultLs.addAll(list.subList(0, count))
+        resultLs.shuffle();
         emit(resultLs)
     }.flowOn(Dispatchers.IO)
 
